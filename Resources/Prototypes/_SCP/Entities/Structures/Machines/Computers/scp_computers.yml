@@ -1,0 +1,31 @@
+﻿- type: entity
+  parent: BaseComputer
+  id: SCPJobTerminal
+  name: job terminal
+  description: A computer used by command members to manage their staff members accordingly.
+  components:
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: comm
+    - map: ["computerLayerKeys"]
+      state: generic_keys
+  - type: ActivatableUI
+    key: enum.JobTerminalUiKey.Key
+  - type: UserInterface
+    interfaces:
+    - key: enum.JobTerminalUiKey.Key
+      type: CommunicationsConsoleBoundUserInterface
+#  - type: Computer
+#    board: CommsComputerCircuitboard
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#3c5eb5"
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StrongMetallic
